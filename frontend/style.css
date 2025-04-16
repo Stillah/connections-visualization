@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.map-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.counter {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+#average-connections {
+  position: fixed;
+  bottom: 50px; /* Place it above the other counter */
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 1000;
+}
