@@ -129,7 +129,7 @@ setInterval(resetCounter, 1000);
 
 async function fetchData() {
   try {
-    const response = await fetch('http://server:8080/get_packages', { method: 'GET' });
+    const response = await fetch('http://localhost:8080/get_packages', { method: 'GET' });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -159,6 +159,7 @@ async function fetchData() {
     delay = Math.max(delay, 0);
     setTimeout(fetchData, delay);
   } catch (error) {
+    setTimeout(fetchData, 1000);
     console.error('Error fetching data:', error);
   }
 }
