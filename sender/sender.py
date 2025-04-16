@@ -13,5 +13,5 @@ for i in range(df.size // df.columns.size):
     if prev != curr_time:
         sleep((curr_time - prev) / 1000)
         prev = curr_time
-    response = requests.post(url='http://server:8080/new_connection', json=df.loc[i].to_json())
+    response = requests.post(url='http://0.0.0.0:8080/new_connection', json=df.loc[i].to_json())
 print('done') 

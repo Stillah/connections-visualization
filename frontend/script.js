@@ -129,7 +129,7 @@ setInterval(resetCounter, 1000);
 
 async function fetchData() {
   try {
-    const response = await fetch('http://127.0.0.1:8080/get_packages', { method: 'GET' });
+    const response = await fetch('http://server:8080/get_packages', { method: 'GET' });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
