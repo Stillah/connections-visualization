@@ -1,4 +1,4 @@
-#How to build with docker
+# How to build with docker
 1) Clone repo
 2) In the project folder: docker build -t assignment2 .
 3) docker run -p 8080:8080 -p 3000:3000 assignment2
