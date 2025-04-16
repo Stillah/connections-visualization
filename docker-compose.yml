@@ -9,13 +9,22 @@ services:
     volumes:
       - ./server:/app
     restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
 
   sender:
-      build:
-        context: ./sender
-      depends_on:
-        - server
-      restart: always
+    build:
+      context: ./sender
+    volumes:
+      - ./sender:/app  # Mount the sender directory into the container
+    depends_on:
+      server:
+        condition: service_healthy
+    restart: always
+    
   frontend:
     build:
       context: ./frontend
@@ -24,5 +33,3 @@ services:
     volumes:
       - ./frontend:/usr/share/nginx/html
     restart: always
-
-  
